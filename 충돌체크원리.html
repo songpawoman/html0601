@@ -15,6 +15,7 @@
             background: yellow;            
         }
     </style>
+    <script src="../js/lib.js"></script>
     <script src="./Rect.js"></script>
     <script>
         let red, green;
@@ -22,8 +23,8 @@
 
         function init(){
             //두개의 사각형 만들기 
-            red = new Rect(document.body, 100, 200, "red");
-            green = new Rect(document.body, 600, 200, "green");
+            red = new Rect(document.body, 100, 200,100,100, "red");
+            green = new Rect(document.body, 600, 200,100,100, "green");
         }
 
         addEventListener("load", function(){
@@ -31,14 +32,17 @@
 
             //문서 전체를 대상으로 마우스 이벤트 연결 
             document.body.addEventListener("mousemove", function(){
-                console.log("마우스 움직이고 있군요");
+                //console.log("마우스 움직이고 있군요");
                 
                 // 객체.(소유권)
-                if(flag){
+                if(true){
                     red.x=event.clientX;
                     red.y=event.clientY;
                     red.move();
                 }
+
+                let result=collisionCheck(red, green);
+                console.log(result);
 
             });
         });
