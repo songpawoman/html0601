@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper{
+            width:700px;
+            height:600px;
+            background-color: yellow;
+            margin: auto;
+        }
+    </style>
+    <script>
+        let wrapper;
+
+        class Ball{
+            constructor(){
+                this.div;
+                this.a=0.1;
+
+                this.div = document.createElement("div");
+                this.div.style.width=50+"px";
+                this.div.style.height=50+"px";
+
+                this.div.style.position="absolute";
+                this.div.style.left=0+"px";
+                this.div.style.top=0+"px";
+
+                wrapper.appendChild(this.div);
+            }
+            move(){
+                this.div.style.left=this.x+"px";
+                this.div.style.top=this.y+"px";
+            }
+        }
+
+        function init(){
+            wrapper=document.getElementById("wrapper");
+        }
+
+        function loop(){
+
+        }
+        addEventListener("load", function(){
+            init();
+            setInterval("loop()",10);
+        });
+    </script>
+</head>
+<body>
+    <div id="wrapper"></div>
+</body>
+</html>
