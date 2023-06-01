@@ -44,6 +44,12 @@
                 let result=collisionCheck(red, green);
                 console.log(result);
 
+                if(result){//충돌이 나면..
+                    green.div.style.background="white";
+                }else{
+                    green.div.style.background="green";
+                }
+
             });
         });
     </script>
